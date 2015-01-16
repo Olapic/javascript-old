@@ -1,4 +1,4 @@
-# Grooveshark JavaScript Style Guide() {
+# Olapic JavaScript Style Guide() {
 
 *A mostly reasonable approach to JavaScript*
 
@@ -891,7 +891,6 @@
     ```
 
   - Use `parseInt` for Numbers and always with a radix for type casting, if you want invalid value to be NaN or the radix is not 10.
-  - If you want invalid values to return 0 and it is a decimal value, use Grooveshark's custom method ```_.toInt()```
 
     ```javascript
     var inputValue = '4';
@@ -913,13 +912,9 @@
 
     // good
     var val = parseInt(inputValue, 10);
-
-    // good
-    var val = _.toInt(inputValue);
     ```
 
-  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), don't.
-  - Use Grooveshark's custom method _.toInt() instead - it uses bitshifting for performance in the browsers for which it makes a difference.
+  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
 
   - Booleans:
 
@@ -1057,7 +1052,6 @@
 
   - Accessor functions for properties are not required
   - If you do make accessor functions use getVal() and setVal('hello')
-  - Grooveshark Note: Nope - Use a Backbone Model if you need getters/setters
 
     ```javascript
     // bad
@@ -1111,7 +1105,6 @@
 ## <a name='constructors'>Constructors</a>
 
   - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
-  - Grooveshark Note: Usually you'll never have to worry about this, because Backbone
 
     ```javascript
     function Jedi() {
