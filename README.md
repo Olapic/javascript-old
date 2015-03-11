@@ -1282,6 +1282,32 @@
 
     **[[⬆]](#TOC)**
 
+## Promises
+
+- Don't encapsulate promises at unnecessary levels, e.g.,
+
+    ```js
+    // bad
+    function search(query) {
+        var deferred = $q.defer(); 
+        repository.search(query).then(function(data){
+            //...
+            deferred.resolve(adaptedResult);
+        }); 
+        return deferred.promise;
+    }
+    
+    // much better
+    function search(query) {
+        return repository.search(query).then(function(data){
+            // ...
+            return adaptedResult;
+        }
+    }); 
+    ```
+
+    **[[⬆]](#TOC)**
+
 
 ## <a name='es5'>ECMAScript 5 Compatibility</a>
 
