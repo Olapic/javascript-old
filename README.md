@@ -363,7 +363,7 @@
     var superPower = new SuperPower();
     ```
 
-  - Use one ```var``` declaration per variable. It's easier to add new variable declarations this way, and you never have to worry about swapping out a ```;``` for a ```,``` or introducing punctuation-only diffs. Use one ```var``` declaration for multiple variables and declare each variable on a newline only when the vars have relationship.
+  - User one `var` statement per variable declaration. It's easier to read and prevent possible errors that are difficult to catch when you use one `var` for multiple declarations. There's only one special case when this is allowed and it depends on the programmer: If the declarations are related and/or you feel they should be grouped, you can use one `var` for multiple declarations, see the examples below to get a better understanding of this
 
     ```javascript
     // bad
