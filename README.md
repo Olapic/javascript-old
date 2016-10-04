@@ -1331,6 +1331,23 @@
         return true;
     }
     ```
+    
+  - Use Given/When/Then to mark blocks inside unit tests.
+
+    ```javascript
+
+    it('should work as we expect', function() {
+            //Given
+            spyOn(externalService, 'tracker');
+
+            //When
+            externalTrackingFactory.trackSearch(mock);
+
+            //Then
+            expect(externalService.tracker).toHaveBeenCalled();
+        }); });
+    }
+    ```
 
     **[[⬆]](#TOC)**
 
