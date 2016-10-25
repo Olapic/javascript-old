@@ -29,6 +29,8 @@
   1. [jQuery](#jquery)
   1. [ES5 Compatibility](#es5)
   1. [Testing](#testing)
+  1. [Angular](#angular)
+   * [Dependency Injection](#dependency)
   1. [Performance](#performance)
   1. [Resources](#resources)
   1. [In the Wild](#in-the-wild)
@@ -1295,21 +1297,21 @@
     ```js
     // bad
     function search(query) {
-        var deferred = $q.defer(); 
+        var deferred = $q.defer();
         repository.search(query).then(function(data){
             //...
             deferred.resolve(adaptedResult);
-        }); 
+        });
         return deferred.promise;
     }
-    
+
     // much better
     function search(query) {
         return repository.search(query).then(function(data){
             // ...
             return adaptedResult;
         }
-    }); 
+    });
     ```
 
     **[[⬆]](#TOC)**
@@ -1331,7 +1333,7 @@
         return true;
     }
     ```
-    
+
   - Use Given/When/Then to mark blocks inside unit tests.
 
     ```javascript
@@ -1351,6 +1353,31 @@
 
     **[[⬆]](#TOC)**
 
+## <a name='angular'>Angular</a>
+- #### <a name='dependency'>Dependency Injection</a>
+    The order of the dependency injection should be given as it is recommended by Angular.
+    The framework dependency first, secondly the project dependency.
+
+    ```javascript
+
+    .factory('exampleFactory', [
+        '$rootScope',
+        '$q', //angular dependencies
+        'MasterMind',
+        'adminAPIService', //project dependencies
+        'API_MEDIA_STATUSES_ID',
+        'INTERNAL_TRACKING_EVENTS',
+        'EXTERNAL_TRACKING_EVENTS', // constant dependencies
+        function(
+            $rootScope,
+            $q,
+            MasterMind,
+            adminAPIService,
+            API_MEDIA_STATUSES_ID,
+            INTERNAL_TRACKING_EVENTS,
+            EXTERNAL_TRACKING_EVENTS
+        ) {
+    ```
 
 ## <a name='performance'>Performance</a>
 
@@ -1482,4 +1509,3 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 **[[⬆]](#TOC)**
 
 # };
-
