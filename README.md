@@ -1361,21 +1361,21 @@
     ```javascript
 
     .factory('exampleFactory', [
-        '$rootScope',
-        '$q', //angular dependencies
-        'MasterMind',
-        'adminAPIService', //project dependencies
+        '$q',
+        '$rootScope', //angular dependencies
+        'adminAPIService',
+        'MasterMind', //project dependencies
         'API_MEDIA_STATUSES_ID',
-        'INTERNAL_TRACKING_EVENTS',
-        'EXTERNAL_TRACKING_EVENTS', // constant dependencies
+        'EXTERNAL_TRACKING_EVENTS',
+        'INTERNAL_TRACKING_EVENTS', //constant dependencies
         function(
-            $rootScope,
             $q,
-            MasterMind,
+            $rootScope,
             adminAPIService,
+            MasterMind,
             API_MEDIA_STATUSES_ID,
-            INTERNAL_TRACKING_EVENTS,
-            EXTERNAL_TRACKING_EVENTS
+            EXTERNAL_TRACKING_EVENTS,
+            INTERNAL_TRACKING_EVENTS
         ) {
     ```
 
