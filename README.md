@@ -363,22 +363,22 @@
     var superPower = new SuperPower();
     ```
 
-  - User one `var` statement per variable declaration. It's easier to read and prevent possible errors that are difficult to catch when you use one `var` for multiple declarations. There's only one special case when this is allowed and it depends on the programmer: If the declarations are related and/or you feel they should be grouped, you can use one `var` for multiple declarations, see the examples below to get a better understanding of this
+  - Use one `var` statement per variable declaration. It's easier to read and prevent possible errors that are difficult to catch when you use one `var` for multiple declarations.
 
     ```javascript
-    // bad
-    var items = getItems();
-    var goSportsTeam = true;
-    var dragonball = 'z';
-
     // bad
     var items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
 
-    // good
+    // bad
     var items = getItems(),
         itemsCant = getItems().length;
+    var dragonball = 'z';
+
+    // good
+    var items = getItems();
+    var goSportsTeam = true;
     var dragonball = 'z';
     ```
 
