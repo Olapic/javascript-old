@@ -17,6 +17,7 @@
   1. [Hoisting](#hoisting)
   1. [Conditional Expressions & Equality](#conditionals)
   1. [Blocks](#blocks)
+  1. [Conditional (ternary) Operator](#ternary-operator)
   1. [Comments](#comments)
   1. [Whitespace](#whitespace)
   1. [Commas](#commas)
@@ -629,6 +630,30 @@
     function() {
         return false;
     }
+    ```
+
+    **[[⬆]](#TOC)**
+
+
+## <a name='ternary-operator'>Conditional (ternary) Operator</a>
+
+    ```javascript
+    // bad
+    var test = foo ? 'foo'
+        : 'bar';
+    
+    // bad
+    var test = foo
+        ? 'foo'
+        : 'bar';
+
+    // good
+    var test = foo ? 'foo' : 'bar';
+        
+    // good
+    var test = foo ?
+        'foo' :
+        'bar';
     ```
 
     **[[⬆]](#TOC)**
