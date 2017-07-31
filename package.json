@@ -1,0 +1,18 @@
+{
+  "name": "eslint-config-olapic",
+  "version": "0.1.0",
+  "description": "Olapic JavaScript style-guide esLint plugin",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olapic/javascript.git"
+  },
+  "keywords": [],
+  "author": "Olapic <frontend@olapic.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">= 8"
+  }
+}
