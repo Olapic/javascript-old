@@ -2,12 +2,12 @@ module.exports = {
   rules: {
     complexity: ['warn'],
     'class-methods-use-this': 'off',
-    'no-invalid-this': ['warn'],
     'no-magic-numbers': ['error', {
       ignoreArrayIndexes: true,
-      enforceConst: true,
+      enforceConst: false,
       detectObjects: false,
     }],
+    'no-param-reassign': ['off'],
     'no-unmodified-loop-condition': 'error',
     'no-useless-call': 'error',
     'no-useless-escape': 'off',
